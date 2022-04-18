@@ -7,8 +7,8 @@ import csv
 ###
 ###
 
-start_page_num = 670019
-end_page_num = 680019
+start_page_num = 665019
+end_page_num = 670019
 
 total_successful_records = 0
 
@@ -85,7 +85,8 @@ with open('raw_apartment_data.csv', 'a', encoding='UTF8', newline='') as f:
             neighborhood = post_title[2].text
 
             # Get number of rooms
-            rooms = ''.join([n for n in post_title[3].text if n.isdigit()])
+            # TODO: allow float numbers
+            rooms = ''.join([n for n in post_title[3].text if n.isdigit() or n is "."])
 
             data_row = [page_num, city, neighborhood, size, rooms, floor, taxes, price, features_dict['Room mates'], features_dict['Furniture'], features_dict['Elevator'], features_dict['Air conditioner'], features_dict['Parking'], features_dict['Balcony'], features_dict['Bars'], features_dict['Shelter'], features_dict['Storeroom'], features_dict['Renovated'], features_dict['Boiler'], features_dict['Pets allowed']]
             feature_names = ['Room mates', 'Furniture', 'Elevator', 'Air conditioner', 'Parking', 'Balcony', 'Bars', 'Shelter', 'Storeroom', 'Renovated', 'Boiler', 'Pets allowed']
