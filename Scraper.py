@@ -7,6 +7,9 @@ import csv
 ###
 ###
 
+# TODO
+# Add strip() on all text values
+
 start_page_num = 665019
 end_page_num = 670019
 
