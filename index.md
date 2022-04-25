@@ -11,20 +11,20 @@ apartments, and we found, that understanding what is considered as a "good price
 who have no experience in that field. We hope that this project will help us (and maybe even others) find a good apartment
 in a good price. :department_store:
 
-[Link to Jupyter notebook](http://sagi313.github.io/Israel-Apartment-ML/main-notebook.html)
+[Link to Jupyter notebook](http://sagi313.github.io/Israel-Apartment-ML/docs/main-notebook.html)
 
 ## Data sources
 using crawling and web-scraping techniques we managed to get records of XXX apartments that are listed for rent in Israel.
 
 ### Homeless :tent:
-[Homeless web-scraper Jupyter Notebook](http://sagi313.github.io/Israel-Apartment-ML/homeless-notebook.html)
+[Homeless web-scraper Jupyter Notebook](http://sagi313.github.io/Israel-Apartment-ML/docs/homeless-notebook.html)
 
 We managed to get more than XXX records out of www.homeless.com, one of the biggest sites that provides listing for renting apartments.
 Because each post in the site had its own web page with a serial number at the URL, it was easy to iterate the post numbers 
 in order to scrape the data and analyze it.
 
 ### Yad2 :v:
-[Yad2 crawler Jupyter Notebook](http://sagi313.github.io/Israel-Apartment-ML/yad2-notebook.html)
+[Yad2 crawler Jupyter Notebook](http://sagi313.github.io/Israel-Apartment-ML/docs/yad2-notebook.html)
 
 www.yad2.co.il is the biggest site in that field, with many relevant data for us. Getting the data out of Yad2 wasn't easy,
 because they have a bot detection system, which blocks known bots signatures. Inorder to bypass this protection we used 
