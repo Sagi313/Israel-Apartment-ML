@@ -28,7 +28,7 @@ def close_ads(driver):
 #
 
 ######## Already searched ########
-# 0-110
+# 0-233
 
 total_posts = 0
 successful_posts = 0
