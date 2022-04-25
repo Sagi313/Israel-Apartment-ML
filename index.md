@@ -32,7 +32,8 @@ Selenium with an [undetectable Chrome driver](https://github.com/ultrafunkamster
 allowed us to access the site and get the HTML template. Because the site renders the HTML DOM of each post using JS, we 
 had to crawl over each post, click on it to get the full HTML DOM, and then use the rendered template.
 
-
+Example of how the crawler work-
+[How the scraper work](scraper.gif)
 ## Struggles and difficulties
 
 ## Summary
