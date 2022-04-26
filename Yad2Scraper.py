@@ -1,9 +1,10 @@
-from time import sleep
-import undetected_chromedriver.v2 as uc
-from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.common.by import By
-from bs4 import BeautifulSoup
 import csv
+from time import sleep
+from bs4 import BeautifulSoup
+import undetected_chromedriver.v2 as uc
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.common.exceptions import ElementClickInterceptedException
 
 
 def close_ads(driver):
@@ -17,9 +18,10 @@ def close_ads(driver):
         try:
             actions.click(ad)
             actions.perform()
-            print('One ad was closed')
+            #print('One ad was closed')
         except:
-            print("Couldn't close ad")
+            pass
+            #print("Couldn't close ad")
 
 
 
@@ -36,8 +38,8 @@ successful_posts = 0
 driver = uc.Chrome(use_subprocess=True)
 actions = ActionChains(driver)
 
-first_page = 233
-last_page = 240
+first_page = 740
+last_page = 760
 url = 'https://www.yad2.co.il/realestate/rent?page='
 
 header = ['Post link', 'City', 'Neighborhood', 'Size', 'Number of rooms', 'Floor number', 'Taxes', 'Price',
@@ -57,9 +59,10 @@ with open('raw_yad2_data.csv', 'a', encoding='UTF8', newline='') as f:
         posts_collapsed = driver.find_elements(By.CLASS_NAME, "date")
         for post_collapsed in posts_collapsed:
             close_ads(driver)
-            post_collapsed.click()
-            # actions.click(post_collapsed)
-            # actions.perform()
+            try:
+                post_collapsed.click()
+            except ElementClickInterceptedException as e:
+                print(e)
             sleep(2)
         html_dom = driver.page_source
         soup = BeautifulSoup(html_dom, 'html5lib')
