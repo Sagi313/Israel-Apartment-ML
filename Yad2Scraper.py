@@ -18,19 +18,10 @@ def close_ads(driver):
         try:
             actions.click(ad)
             actions.perform()
-            #print('One ad was closed')
+            print('One ad was closed')
         except:
-            pass
-            #print("Couldn't close ad")
+            print("Couldn't close ad")
 
-
-
-
-# TODO
-#
-
-######## Already searched ########
-# 0-233
 
 total_posts = 0
 successful_posts = 0
@@ -38,7 +29,7 @@ successful_posts = 0
 driver = uc.Chrome(use_subprocess=True)
 actions = ActionChains(driver)
 
-first_page = 740
+first_page = 0
 last_page = 760
 url = 'https://www.yad2.co.il/realestate/rent?page='
 
@@ -48,7 +39,7 @@ header = ['Post link', 'City', 'Neighborhood', 'Size', 'Number of rooms', 'Floor
 
 with open('raw_yad2_data.csv', 'a', encoding='UTF8', newline='') as f:
     writer = csv.writer(f)
-    #writer.writerow(header)
+    writer.writerow(header)
 
     for page_num in range(first_page, last_page):
         print('Going over page', page_num)
@@ -158,6 +149,3 @@ with open('raw_yad2_data.csv', 'a', encoding='UTF8', newline='') as f:
             except Exception as e:
                 print(e)
                 continue
-
-
-sleep(10)

@@ -2,16 +2,8 @@ import requests
 from bs4 import BeautifulSoup
 import csv
 
-### Already Covered
-### 670019 - 685800
-###
-###
-
-# TODO
-# Add strip() on all text values
-
 start_page_num = 665019
-end_page_num = 670019
+end_page_num = 685800
 
 total_successful_records = 0
 
@@ -22,7 +14,7 @@ header = ['Page number', 'City', 'Neighborhood', 'Size', 'Number of rooms', 'Flo
 
 with open('raw_homeless_data.csv', 'a', encoding='UTF8', newline='') as f:
     writer = csv.writer(f)
-    # writer.writerow(header)
+    writer.writerow(header)
 
     for page_num in range(start_page_num, end_page_num):
         try:
@@ -85,7 +77,6 @@ with open('raw_homeless_data.csv', 'a', encoding='UTF8', newline='') as f:
             neighborhood = post_title[2].text
 
             # Get number of rooms
-            # TODO: allow float numbers
             rooms = ''.join([n for n in post_title[3].text if n.isdigit() or n is "."])
 
             data_row = [page_num, city, neighborhood, size, rooms, floor, taxes, price, features_dict['Room mates'],
