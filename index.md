@@ -1,6 +1,8 @@
 # Israel Apartment Rental ML Project
 #### By Lior Nissan & Sagi Buria
 
+:bangbang:	:bangbang: PLEASE NOTE THAT FULL INFO ON THE PROJECT CAN BE FOUND IN THE PTT UNDER THE MAIN BRANCH	:bangbang:	:bangbang:	
+
 ## Introduction
 
 #### Research question
@@ -14,7 +16,7 @@ in a good price. :department_store:
 [Link to Jupyter notebook](http://sagi313.github.io/Israel-Apartment-ML/docs/main-notebook.html)
 
 ## Data sources
-using crawling and web-scraping techniques we managed to get records of XXX apartments that are listed for rent in Israel.
+using crawling and web-scraping techniques we managed to get records of 7,221 apartments that are listed for rent in Israel.
 
 ### Homeless :tent:
 [Homeless web-scraper Jupyter Notebook](http://sagi313.github.io/Israel-Apartment-ML/docs/homeless-notebook.html)
@@ -35,6 +37,8 @@ had to crawl over each post, click on it to get the full HTML DOM, and then use 
 _Example of how the crawler work-_
 
 ![How the scraper work](scraper.gif)
-## Struggles and difficulties
 
 ## Summary
+
+
+You can checkout the code for the project in the main branch of this repository :)
